@@ -5,6 +5,10 @@ The power limit will be set each time the pc is turned on.
 
 The power limit of this script is 140 Watts.
 
+## Prerequisite
+
+Nvidia Cuda required because this script needs to use the *nvidia-smi* command.
+
 ## Usage
 
 To use this script you need to cd to this project's root directory.
