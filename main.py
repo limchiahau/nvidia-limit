@@ -2,7 +2,7 @@
 
 import shutil
 from pathlib import Path
-import os
+import subprocess
 
 
 TIMER_FILE = "nvidia-tdp.timer"
@@ -25,11 +25,9 @@ def copy(filename, path):
 
 
 def configure_service():
-    # stub
-    pass
+    subprocess.run(["systemctl", "daemon-reload"])
+    subprocess.run(["systemctl", "enable", "--now", "nvidia-tdp.timer"])
 
 
 if __name__ == "__main__":
-    print(os.getenv("USER"))
-
     main()
