@@ -1,6 +1,13 @@
+#!/usr/bin/python3
+
+import shutil
+from pathlib import Path
+import os
+
+
 TIMER_FILE = "nvidia-tdp.timer"
-SERVICE_FILE = "nvidia-tdp.service "
-SYSTEMD_TIMER_DIR = r"/etc/systemd/system"
+SERVICE_FILE = "nvidia-tdp.service"
+SYSTEMD_TIMER_DIR = Path("/etc/systemd/system")
 
 
 def main():
@@ -11,8 +18,10 @@ def main():
 
 
 def copy(filename, path):
-    # stub
-    pass
+    new_path = path / filename
+    filename = Path(".") / filename
+
+    shutil.copyfile(filename, new_path)
 
 
 def configure_service():
@@ -21,4 +30,6 @@ def configure_service():
 
 
 if __name__ == "__main__":
+    print(os.getenv("USER"))
+
     main()
