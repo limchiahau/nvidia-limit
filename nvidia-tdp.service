@@ -4,4 +4,4 @@ Description=Set NVIDIA power limit to 140w
 [Service]
 Type=oneshot
 ExecStartPre=/usr/bin/nvidia-smi -pm 1
-ExecStart=/usr/bin/nvidia-smi -pl 140
+ExecStart=/usr/bin/nvidia-smi -pl 120
